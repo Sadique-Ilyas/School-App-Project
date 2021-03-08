@@ -51,26 +51,36 @@ class _LoginPageState extends State<LoginPage> {
             Row(
               children: [
                 Container(
+                  padding: EdgeInsets.only(left: 5, right: 5),
                   height: height,
                   decoration: BoxDecoration(
                       color: Colors.blue,
                       borderRadius:
                           BorderRadius.all(Radius.circular(borderRadius))),
-                  child: CountryCodePicker(
-                    onChanged: _onCountryChange,
-                    // Initial selection and favorite can be one of code ('IT') OR dial_code('+39')
-                    initialSelection: 'IN',
-                    // favorite: ['IN'],
-                    // optional. Shows only country name and flag
-                    showCountryOnly: false,
-                    // optional. Shows only country name and flag when popup is closed.
-                    showOnlyCountryWhenClosed: false,
-                    // optional. aligns the flag and the Text left
-                    alignLeft: false,
-                    textStyle: textStyle,
-                    searchDecoration: InputDecoration(
-                      hintText: "Search by Country Code",
-                    ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      CountryCodePicker(
+                        onChanged: _onCountryChange,
+                        // Initial selection and favorite can be one of code ('IT') OR dial_code('+39')
+                        initialSelection: 'IN',
+                        // favorite: ['IN'],
+                        // optional. Shows only country name and flag
+                        showCountryOnly: false,
+                        // optional. Shows only country name and flag when popup is closed.
+                        showOnlyCountryWhenClosed: false,
+                        // optional. aligns the flag and the Text left
+                        alignLeft: false,
+                        textStyle: textStyle,
+                        searchDecoration: InputDecoration(
+                          hintText: "Search by Country Code",
+                        ),
+                      ),
+                      Icon(
+                        Icons.keyboard_arrow_down_rounded,
+                        color: Colors.white,
+                      )
+                    ],
                   ),
                 ),
                 Flexible(

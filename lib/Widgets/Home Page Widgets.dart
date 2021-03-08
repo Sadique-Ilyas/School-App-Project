@@ -138,7 +138,8 @@ class HomePageWidgets {
                   ),
                   InkWell(
                       onTap: () {
-                        Get.to(() => MyAccountPage());
+                        Get.to(() => MyAccountPage(),
+                            transition: Transition.rightToLeft);
                       },
                       child: Icon(Icons.person_outline))
                 ],
